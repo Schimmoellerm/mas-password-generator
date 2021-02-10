@@ -1,6 +1,7 @@
 // Assignment Code
 // var generateBtn = document.querySelector("#generate");
 
+let password = document.querySelector("#password")
 let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
@@ -41,6 +42,8 @@ function generateBtn () {
   }
   charPool = "";
   console.log(charPool);
+
+  password.textContent = "it works!"
 //.fromCharCode to pull key binding information from UTF-8
 }
 
