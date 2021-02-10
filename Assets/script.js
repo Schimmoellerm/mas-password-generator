@@ -9,24 +9,31 @@ let charPool = ""
 
 function generateBtn () {
   let input = prompt("Select a password length between 8 and 128");
-
-  //Need if statement that will check if the 
-  //if (input < 8);
-   // alert ("password length is too short");
-   // generateBtn;
-//} else if (input > 128); {
-    //alert ("password is to long");
-    //generateBtn;
-//}
-
-  let choiceLower = confirm("Do you want to include lowercase letters?");
-//Need if statement for including lowers
-  let choiceUpper = confirm("Do you want to include uppercase letters?");
-//Need if statement for including uppers
-  let choiceNumber = confirm("Do you want to include numbers?");
-//Need if statement for including numbers
-  let choiceSpecial = confirm("Do you want to include special characters?");
-//Need if statement for including specials
+  if (input < 8 || input > 128) {
+    alert ("Unacceptable length! Please start over.");
+    generateBtn();
+  } else {
+    let choiceLower = confirm("Do you want to include lowercase letters?");
+      if (choiceLower === true) {
+        charPool = charPool + lowercase;
+      }
+    let choiceUpper = confirm("Do you want to include uppercase letters?");
+      if (choiceUpper === true) {
+        charPool = charPool + uppercase;
+      }
+    let choiceNumber = confirm("Do you want to include numbers?");
+      if (choiceNumber === true) {
+        charPool = charPool + numbers;
+      }
+    let choiceSpecial = confirm("Do you want to include special characters?");
+      if (choiceSpecial === true) {
+        charPool = charPool + specialCharacters;
+      }
+    if (!choiceLower && !choiceUpper && !choiceNumber && !choiceSpecial) {
+      alert ("You must make at least one selection! Please start over.");
+      generateBtn();
+    }
+  }
 
 //.fromCharCode to pull key binding information from UTF-8
 }
