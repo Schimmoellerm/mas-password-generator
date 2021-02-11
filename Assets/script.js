@@ -1,12 +1,12 @@
 // Assignment Code
-// var generateBtn = document.querySelector("#generate");
 
 let password = document.querySelector("#password")
 let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let specialCharacters =  " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-let charPool = ""
+let charPool = "";
+let finalPassword = [];
 
 function generateBtn () {
   let input = prompt("Select a password length between 8 and 128");
@@ -40,23 +40,16 @@ function generateBtn () {
       generateBtn();
     }
   }
+  for (i = 0; i < input.length; i++) {
+    let Choices = charPool[Math.floor(Math.random() * charPool.length)];
+    finalPassword.push(Choices);
+  }
+  finalPassword.join;
+
   charPool = "";
   console.log(charPool);
+  console.log(finalPassword);
 
-  password.textContent = "it works!"
+  password.textContent = finalPassword;
 //.fromCharCode to pull key binding information from UTF-8
 }
-
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
