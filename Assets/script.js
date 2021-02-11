@@ -6,7 +6,8 @@ let lowercase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let specialCharacters =  " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 let charPool = "";
-let finalPassword = [];
+let finalPassword = "";
+let input;
 
 function generateBtn () {
   let input = prompt("Select a password length between 8 and 128");
@@ -40,16 +41,17 @@ function generateBtn () {
       generateBtn();
     }
   }
-  for (i = 0; i < input.length; i++) {
+  for (i = 0; i < input; i++) {
     let Choices = charPool[Math.floor(Math.random() * charPool.length)];
-    finalPassword.push(Choices);
+    finalPassword = finalPassword + Choices;
   }
-  finalPassword.join;
-
+  console.log(finalPassword);
+  password.textContent = finalPassword;
   charPool = "";
+  finalPassword = "";
   console.log(charPool);
   console.log(finalPassword);
 
-  password.textContent = finalPassword;
+ 
 //.fromCharCode to pull key binding information from UTF-8
 }
